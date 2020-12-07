@@ -1,0 +1,312 @@
+[
+	{
+		"testCaseId" : 1,
+		"testCaseDesc" : "Open weather map page and verify the map according to the play control working",
+		"steps" : [
+				{
+					"stepNo" : 1,
+					"stepDesc" : "Input search value into search box",
+					"locator" : "id",
+					"selector" : "q",
+					"action" : "sendKey",
+					"param" : "Ho Chi Minh, VN"
+				},
+				{
+					"stepNo" : 2,
+					"stepDesc" : "Hit enter key",
+					"locator" : "",
+					"selector" : "",
+					"action" : "sendKey",
+					"param" : "Enter"
+				},
+				{
+					"stepNo" : 3,
+					"stepDesc" : "Verify search result page",
+					"locator" : "id",
+					"selector" : "forecast_list_ul",
+					"action" : "assertTrue",
+					"param" : "Ho Chi Minh, VN"
+				},
+				{
+					"stepNo" : 4,
+					"stepDesc" : "Click on 'Geo coord' value to open the map",
+					"locator" : "css",
+					"selector" : ".table tr:nth-child(1) > td:nth-child(2) > p:nth-child(5) > a",
+					"action" : "click",
+					"param" : ""
+				},
+				{
+					"stepNo" : 5,
+					"stepDesc" : "Verify that the searched City displayed on the map",
+					"locator" : "xpath",
+					"selector" : "//*/span[contains(text(),'Chi Minh City')]",
+					"action" : "assertTrue",
+					"param" : ""
+				},
+				{
+					"stepNo" : 6,
+					"stepDesc" : "Drag and drop the progess bar to start point",
+					"locator" : "id",
+					"selector" : "control-range",
+					"action" : "dragAndDropBy",
+					"param" : "2, 143"
+				},
+				{
+					"stepNo" : 7,
+					"stepDesc" : "Verify Cities checkbox is unchecked",
+					"locator" : "id",
+					"selector" : "citiesConditions",
+					"action" : "assertEquals",
+					"param" : "false"
+				},
+				{
+					"stepNo" : 8,
+					"stepDesc" : "Click the play button on control bar",
+					"locator" : "id",
+					"selector" : "play",
+					"action" : "click",
+					"param" : "yes"
+				},
+				{
+					"stepNo" : 8,
+					"stepDesc" : "Verify date time is updated while playing",
+					"locator" : "id",
+					"selector" : "current-moment",
+					"action" : "assertRealTimeUpdate",
+					"param" : "yes"
+				} ]
+	},
+	{
+			"testCaseId" : 2,
+			"testCaseDesc" : "Open weather map page from City weather forecast page",
+			"steps" : [
+					{
+						"stepNo" : 1,
+						"stepDesc" : "Input search value into search box",
+						"locator" : "id",
+						"selector" : "q",
+						"action" : "sendKey",
+						"param" : "Ho Chi Minh, VN"
+					},
+					{
+						"stepNo" : 2,
+						"stepDesc" : "Hit enter key",
+						"locator" : "",
+						"selector" : "",
+						"action" : "sendKey",
+						"param" : "Enter"
+					},
+					{
+						"stepNo" : 3,
+						"stepDesc" : "Verify search result page",
+						"locator" : "id",
+						"selector" : "forecast_list_ul",
+						"action" : "assertTrue",
+						"param" : "Ho Chi Minh, VN"
+					},
+					{
+						"stepNo" : 4,
+						"stepDesc" : "Click on City name ",
+						"locator" : "css",
+						"selector" : "#forecast_list_ul a:nth-of-type(1)",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 5,
+						"stepDesc" : "Verify city name on City weather forecast page",
+						"locator" : "tagName",
+						"selector" : "h2",
+						"action" : "assertTrue",
+						"param" : "Ho Chi Minh City, VN"
+					},
+					{
+						"stepNo" : 6,
+						"stepDesc" : "Click on precipitation on the map to open new tab",
+						"locator" : "css",
+						"selector" : "a.badge-block",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 7,
+						"stepDesc" : "Navigate to new tab",
+						"locator" : "",
+						"selector" : "",
+						"action" : "switchToNewTab",
+						"param" : ""
+					},
+					{
+						"stepNo" : 8,
+						"stepDesc" : "Click on City name on the map",
+						"locator" : "xpath",
+						"selector" : "//*/span[contains(text(),'Chi Minh City')]",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 9,
+						"stepDesc" : "Verify city full info extended",
+						"locator" : "css",
+						"selector" : "div.leaflet-map-pane div.leaflet-marker-pane > div.leaflet-marker-icon.marker-default.leaflet-zoom-animated.leaflet-clickable.expanded div.row.city-full-info > table > tbody > tr:nth-child(1) > td.city-param",
+						"action" : "assertTrue",
+						"param" : ""
+					} ]
+		},
+		{
+			"testCaseId" : 3,
+			"testCaseDesc" : "Open weather map page from Search Result page and switching between different settings on map",
+			"steps" : [
+					{
+						"stepNo" : 1,
+						"stepDesc" : "Input search value into search box",
+						"locator" : "id",
+						"selector" : "q",
+						"action" : "sendKey",
+						"param" : "Ho Chi Minh, VN"
+					},
+					{
+						"stepNo" : 2,
+						"stepDesc" : "Hit enter key",
+						"locator" : "",
+						"selector" : "",
+						"action" : "sendKey",
+						"param" : "Enter"
+					},
+					{
+						"stepNo" : 3,
+						"stepDesc" : "Verify search result page",
+						"locator" : "id",
+						"selector" : "forecast_list_ul",
+						"action" : "assertTrue",
+						"param" : "Ho Chi Minh, VN"
+					},
+					{
+						"stepNo" : 4,
+						"stepDesc" : "Click on 'Geo coord' value to open the map",
+						"locator" : "css",
+						"selector" : ".table tr:nth-child(1) > td:nth-child(2) > p:nth-child(5) > a",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 5,
+						"stepDesc" : "Verify that the searched City displayed on the map",
+						"locator" : "xpath",
+						"selector" : "//*/span[contains(text(),'Chi Minh City')]",
+						"action" : "assertTrue",
+						"param" : ""
+					},
+					{
+						"stepNo" : 6,
+						"stepDesc" : "Set view mode to Global Precipitation",
+						"locator" : "xpath",
+						"selector" : "//div[input[@id='Global Precipitation']]",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 7,
+						"stepDesc" : "Verify map is showed on Global Precipitation mode",
+						"locator" : "css",
+						"selector" : ".scale-details > div",
+						"action" : "assertTrue",
+						"param" : "Precipitation, mm/h"
+					},
+					{
+						"stepNo" : 8,
+						"stepDesc" : "Set view mode to Pressure",
+						"locator" : "xpath",
+						"selector" : "//div[input[@id='Pressure']]",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 9,
+						"stepDesc" : "Verify map is showed on Pressure mode",
+						"locator" : "css",
+						"selector" : ".scale-details > div",
+						"action" : "assertTrue",
+						"param" : "Pressure, hPa"
+					},
+					{
+						"stepNo" : 10,
+						"stepDesc" : "Set view mode to Wind speed",
+						"locator" : "xpath",
+						"selector" : "//div[input[@id='Wind speed']]",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 11,
+						"stepDesc" : "Verify map is showed on Wind speed mode",
+						"locator" : "css",
+						"selector" : ".scale-details > div",
+						"action" : "assertTrue",
+						"param" : "Wind speed, m/s"
+					},
+					{
+						"stepNo" : 12,
+						"stepDesc" : "Set view mode to Clouds",
+						"locator" : "xpath",
+						"selector" : "//div[input[@id='Clouds']]",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 13,
+						"stepDesc" : "Verify map is showed on Clouds mode",
+						"locator" : "css",
+						"selector" : ".scale-details > div",
+						"action" : "assertTrue",
+						"param" : "Clouds, %"
+					},
+					{
+						"stepNo" : 14,
+						"stepDesc" : "Set view mode to Temperature",
+						"locator" : "xpath",
+						"selector" : "//div[input[@id='Temperature']]",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 15,
+						"stepDesc" : "Verify map is showed on Temperature mode",
+						"locator" : "css",
+						"selector" : ".scale-details > div",
+						"action" : "assertTrue",
+						"param" : "Temperature, °C"
+					},
+					{
+						"stepNo" : 16,
+						"stepDesc" : "Click to turn off Cities on the map",
+						"locator" : "className",
+						"selector" : "weather-layer-container__label",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 17,
+						"stepDesc" : "Verify the Cities have been hidden from the map",
+						"locator" : "partialLinkText",
+						"selector" : "Chi Minh City",
+						"action" : "assertNull",
+						"param" : ""
+					},
+					{
+						"stepNo" : 18,
+						"stepDesc" : "Click to turn on Cities on the map",
+						"locator" : "className",
+						"selector" : "weather-layer-container__label",
+						"action" : "click",
+						"param" : ""
+					},
+					{
+						"stepNo" : 19,
+						"stepDesc" : "Verify the Cities have been hidden from the map",
+						"locator" : "xpath",
+						"selector" : "//*/span[contains(text(),'Chi Minh City')]",
+						"action" : "assertExist",
+						"param" : ""
+					} ]
+		} ]

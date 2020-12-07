@@ -1,0 +1,10 @@
+/target/
+/test-output/
+/.classpath
+/.project
+/.settings
+/.DS_Store
+/chromedriver
+/geckodriver
+/selenium-server-standalone-3.141.59.jar
+/UITestReport.html
